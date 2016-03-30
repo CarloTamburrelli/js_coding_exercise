@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="js_coding_exercise">
+
+<head>
+  <meta charset="utf-8">
+  <title>JS Coding Exercise</title>
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controller.js"></script>
+</head>
+
+<body ng-controller="JsCodingExercise">
+  <ul>
+    <li ng-repeat="note in notes">
+      <input ng-model="note.name" type="text"></input>
+      <input ng-model="note.content" type="text"></input>
+      <span>{{note.last_modified | date:'dd/MM/yyyy, h:m a'}}</span>
+      <a ng-click="delete(note.id)" href="#">Delete</a>
+      <a ng-click="update(note)" href="#">Modify</a>
+    </li>
+  </ul>
+  <input ng-model="new.name" type="text"></input>
+  <input ng-model="new.content" type="text"></input>
+  <a ng-click="create(new)" href="#">Create</a>
+</body>
+
+</html>
