@@ -17,6 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.5.3"
+    "angular": "^1.5.3",
+    "bootstrap": "^3.3.6",
+    "angular-xeditable": "^0.1.11"
   }
 }

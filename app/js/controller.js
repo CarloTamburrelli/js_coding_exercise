@@ -1,6 +1,10 @@
-var myApp = angular.module('js_coding_exercise', []);
+var app = angular.module('js_coding_exercise', ["xeditable"]);
 
-myApp.controller('JsCodingExercise', ['$scope', '$http', function($scope, $http) {
+app.run(function(editableOptions) {
+  editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+});
+
+app.controller('JsCodingExercise', ['$scope', '$http', function($scope, $http) {
   $scope.new = {};
 
   $scope.create = function(note) {
