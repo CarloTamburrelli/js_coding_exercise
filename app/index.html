@@ -19,13 +19,14 @@
     <div class="row">
       <div class="page-header col-xs-12">
         <h1 class="text-center">JS Coding Exercise</h1>
+          
       </div>
       <div class="col-xs-12">
         <div>
           <h3>Search</h3>
         </div>
         <div class="panel-body">
-
+             <input ng-model="search_string" type="text" class="form-control"></input>
         </div>
       </div>
       <div class="table-responsive col-xs-12">
@@ -53,7 +54,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="note in notes">
+            <tr ng-repeat="note in notes | filter:search_string">
               <td>
                 <span editable-text="note.name" class="list-group-item-heading inline-block" onbeforesave="update(note)">{{note.name}}</span>
               </td>
@@ -61,10 +62,10 @@
                 <span editable-text="note.content" class="inline" onbeforesave="update(note)">{{note.content}}</span>
               </td>
               <td>
-                <small class="inline">{{note.last_modified | date:'dd/MM/yyyy, h:m a'}}</small>
+                <small class="inline">{{note.updated_at | date:'dd/MM/yyyy, h:m a'}}</small>
               </td>
               <td>
-                <a ng-click="delete(note.id)" href="#" style="color:red">
+                <a ng-click="delete(note._id)" href="#" style="color:red">
                   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </a>
               </td>
@@ -73,7 +74,6 @@
         </table>
       </div>
     </div>
-  </div>
   </div>
 </body>
 
