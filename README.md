@@ -1,6 +1,6 @@
 JS Coding Exercise
 ==================
-A simple single-page note taking application.
+A test webapp with MEAN for Carlo.
 
 #### Instructions:
 
